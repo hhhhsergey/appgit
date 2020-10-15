@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>OrdersDTO findByOrderIdAndHandle</title>
+</head>
+<body>
+	<h1>OrdersDTO findByOrderIdAndHandle</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>orderid</th>
+				<th>type</th>
+				<th>param1</th>
+				<th>param2</th>
+				<th>param3</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td th:text="${ordersDTO.orderid}"></td>
+				<td th:text="${ordersDTO.type}"></td>
+				<td th:text="${ordersDTO.param1}"></td>
+				<td th:text="${ordersDTO.param2}"></td>
+				<td th:text="${ordersDTO.param3}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
