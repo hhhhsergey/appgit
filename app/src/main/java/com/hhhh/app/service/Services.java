@@ -1,5 +1,6 @@
 package com.hhhh.app.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,6 +13,7 @@ import com.hhhh.app.entity.Lesson;
 
 @Service
 public class Services {
+	Mathcontainer mc=new Mathcontainer();
 
 	@Autowired
 	private LessonDAOimpl lessonDAOimpl;
@@ -21,6 +23,25 @@ public class Services {
 	}
 	public List<Lesson> listall() {
 		return lessonDAOimpl.listAll();
+	}
+	
+	public Mathcontainer generateMC(){
+		mc.setOne(5);
+		mc.setTwo(3);
+		mc.setResult(mc.one+mc.two);
+		return mc;
+	}
+	
+//	public Mathcontainer generateMC(){
+//		mc.setOne(5);
+//		mc.setTwo(3);
+//		mc.setResult(mc.one+mc.two);
+//		return mc;
+//	}
+	
+	
+	public void setuserresult(Mathcontainer mathcontainer, double userresult) {
+		mathcontainer.setUserresult(userresult);
 	}
 
 }
