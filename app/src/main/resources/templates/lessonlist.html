@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Lesson listAll</title>
+</head>
+<body>
+	<h1>Lesson listAll</h1>
+	<p>Выведены данные по базе lesson без привязки к пользователю, т.к. их нет. </p>
+	<table border="1" cellpadding="5">
+		<thead>
+			<tr>
+				<th>lesson.getId_math()</th>
+				<th>lesson.getRank()</th>
+				<th>lesson.getRank_total()</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="lesson:${listallrank}">
+				<td th:text="${lesson.getId_math()}"></td>
+				<td th:text="${lesson.getRank()}"></td>
+				<td th:text="${lesson.getRank_total()}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

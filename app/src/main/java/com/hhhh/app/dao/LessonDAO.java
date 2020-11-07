@@ -13,7 +13,8 @@ public interface LessonDAO<Lesson> {
 	void save(Lesson lesson);
 
 	//or add
-	void create(Lesson lesson);
+	//вообще, первое это id, надо думать
+	void create(double b,double c);
 
 	void delete(Lesson lesson);
 }

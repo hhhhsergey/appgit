@@ -9,10 +9,13 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.hhhh.app.entity.Lesson;
 
-@Component
+@Repository
+@Transactional
 public class LessonDAOimpl implements LessonDAO<Lesson> {
 
 	// java ee pattern
@@ -22,6 +25,7 @@ public class LessonDAOimpl implements LessonDAO<Lesson> {
 		this.entityManager = entityManager;
 	}
 
+	// 
 	@Override
 	public Lesson findById(int id_math) {
 		return Optional.ofNullable(entityManager.find(Lesson.class, id_math)).get();
@@ -31,18 +35,22 @@ public class LessonDAOimpl implements LessonDAO<Lesson> {
 	public List<Lesson> listAll() {
 		Query query = entityManager.createQuery("SELECT e FROM Lesson e");
 		return query.getResultList();
+//		List<Lesson> resultList = (List<Lesson>)query.getResultList();
+//		return resultList;
 	}
 
+	//update?
 	@Override
 	public void save(Lesson lesson) {
 		executeInsideTransaction(entityManager -> entityManager.persist(lesson));
-
 	}
 
 	// https://www.baeldung.com/java-dao-pattern
 
 	@Override
-	public void create(Lesson lesson) {
+	public void create(double b,double c) {
+		Lesson lesson=new Lesson(b,c);
+		entityManager.persist(lesson);
 		// TODO Автоматически созданная заглушка метода
 
 	}

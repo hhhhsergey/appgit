@@ -39,6 +39,10 @@ public class Services {
 //		return mc;
 //	}
 	
+	//test save lesson
+	public void savelesson(double a,double b) {
+		lessonDAOimpl.create(a,b);
+	}
 	
 	public void setuserresult(Mathcontainer mathcontainer, double userresult) {
 		mathcontainer.setUserresult(userresult);

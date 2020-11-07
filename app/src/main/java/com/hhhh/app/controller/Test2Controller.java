@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.hhhh.app.entity.Lesson;
 import com.hhhh.app.service.Mathcontainer;
 import com.hhhh.app.service.Services;
 
@@ -36,6 +37,19 @@ public class Test2Controller {
 		mv.addObject("message", message);
 		return mv;
 	}
+	
+	//test save lesson
+	@GetMapping("/main/save")
+	public ModelAndView testsave() {
+		double a=2;
+		double b=22;
+		services.savelesson(a, b);
+		String message = "test save lesson";
+		ModelAndView mv=new ModelAndView("mainpage");
+		mv.addObject("message", message);
+		return mv;
+	}
+	
 	
 //	@ModelAttribute("mc")
 //	public Mathcontainer getMC() {
