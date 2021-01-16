@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="utf-8" />
+<title>mathapp меню</title>
+</head>
+<body>
+	<h1>mathapp меню</h1>
+	<h4>Добро пожаловать в меню, [[${name}]].</h4>
+	<br>
+	<a href="/menu/testingform">Начать урок</a>
+	<br><br>
+
+	<div th:if="${fivelessons.size()} != 0"> 
+	<div>Предыдущие пройденные уроки пользователя, начиная с последнего.</div>
+	<table border="1" cellpadding="5">
+		<thead>
+			<tr>
+				<th>ранк урока</th>
+				<th>ранк общий</th>
+				<th>дата</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="lesson:${fivelessons}">
+				<td th:text="${#numbers.formatDecimal(lesson.getRank(),1,2)}"></td>
+				<td th:text="${#numbers.formatDecimal(lesson.getRank_total(),1,2)}"></td>
+				<td th:text="${#dates.format(lesson.getDate(),'dd-MMM-YYYY')}"></td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+
+
+	<br>
+	<a href="/menu/alllessons">Все пройденные уроки</a>
+
+
+	<br>
+	<br>
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Logout" />
+	</form>
+</body>
+</html>

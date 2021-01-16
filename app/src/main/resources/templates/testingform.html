@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>mathapp урок</title>
+</head>
+<body>
+	<h1>mathapp урок</h1>
+	<p>Необходимо вставить правильные ответы.</p>
+	<form th:method="post" th:action="@{/menu/testingform}"
+		th:object="${mathcontainer}">
+		<table >
+			<thead>
+				<tr>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th>Ответ</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td th:text="${mathcontainer.getOne1()}"></td>
+					<td> +</td>
+					<td th:text="${mathcontainer.getTwo1()}"></td>
+					<td><label for="userresult1">=</label> 
+						<input type="text" th:field="*{userresult1}" id="userresult1" /> 
+						<br /></td>
+				</tr>
+				<tr>
+					<td th:text="${mathcontainer.getOne2()}"></td>
+					<td> -</td>
+					<td th:text="${mathcontainer.getTwo2()}"></td>
+					<td><label for="userresult2">=</label> <input
+						type="text" th:field="*{userresult2}" id="userresult2" /> <br /></td>
+				</tr>
+				<tr>
+					<td th:text="${mathcontainer.getOne3()}"></td>
+					<td> x</td>
+					<td th:text="${mathcontainer.getTwo3()}"></td>
+					<td><label for="userresult3">=</label> <input
+						type="text" th:field="*{userresult3}" id="userresult3" /> <br /></td>
+				</tr>
+				<tr>
+					<td th:text="${mathcontainer.getOne4()}"></td>
+					<td> /</td>
+					<td th:text="${mathcontainer.getTwo4()}"></td>
+					<td><label for="userresult4">=</label> <input
+						type="text" th:field="*{userresult4}" id="userresult4" /> <br /></td>
+				</tr>
+
+			</tbody>
+		</table>
+		<input type="submit" value="Принять ответы" />
+	</form>
+</body>
+</html>

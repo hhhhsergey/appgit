@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>mathapp все пройденные уроки</title>
+</head>
+<body>
+	<h1>mathapp все пройденные уроки</h1>
+	<p>Вcе пройденные уроки, начиная с последнего. </p>
+	<table border="1" cellpadding="5">
+		<thead>
+			<tr>
+				<th>ранк урока</th>
+				<th>ранк общий</th>
+				<th>дата</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="lesson:${allLessons}">
+				<td th:text="${#numbers.formatDecimal(lesson.getRank(),1,2)}"></td>
+				<td th:text="${#numbers.formatDecimal(lesson.getRank_total(),1,2)}"></td>
+				<td th:text="${#dates.format(lesson.getDate(),'dd-MMM-YYYY')}"></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<a href="/menu">Меню</a>
+</body>
+</html>

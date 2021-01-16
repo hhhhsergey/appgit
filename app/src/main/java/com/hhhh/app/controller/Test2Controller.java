@@ -26,30 +26,25 @@ public class Test2Controller {
 	
 	
 	
+	
 	@Autowired
 	private Services services;
 	
-	@GetMapping("/main")
-	public ModelAndView hello() {
-		//nobody did'nt see this
-		String message = "Test2Controller main is here";
-		ModelAndView mv=new ModelAndView("mainpage");
-		mv.addObject("message", message);
-		return mv;
-	}
 	
 	//test save lesson
 	@GetMapping("/main/save")
 	public ModelAndView testsave() {
 		double a=2;
 		double b=22;
-		services.savelesson(a, b);
+		int c=1;//id_user
+		services.savelesson(a, b,c);
 		String message = "test save lesson";
 		ModelAndView mv=new ModelAndView("mainpage");
 		mv.addObject("message", message);
 		return mv;
 	}
 	
+	//<a href="/main">main page?</a>
 	
 //	@ModelAttribute("mc")
 //	public Mathcontainer getMC() {
@@ -61,10 +56,11 @@ public class Test2Controller {
 	public String test(Model model, HttpSession session) {
 		String message = "test is here";
 		model.addAttribute("message", message);
-		Mathcontainer mc=services.generateMC();
-		model.addAttribute("mc", mc);
+//		Mathcontainer mc=services.generateMC();
+//		закоментил, т.к. переписал метод
+//		model.addAttribute("mc", mc);
 		System.out.println("check 1 step");
-		session.setAttribute("mc", mc);
+//		session.setAttribute("mc", mc);
 		return "testlist";
 	}
 	//try get back
@@ -72,7 +68,7 @@ public class Test2Controller {
 	public String result(@RequestParam("userresult") double userresult, HttpSession session, Mathcontainer mc, Model model) {
 		mc=(Mathcontainer)session.getAttribute("mc");
 		String message = "test with result is here";
-		services.setuserresult(mc, userresult);
+//		services.setuserresult(mc, userresult);
 		model.addAttribute("message", message);
 		model.addAttribute("mc",mc);
 		System.out.println("step2 "+mc.toString());

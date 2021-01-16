@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>тест вывода практики</title>
+</head>
+<body>
+	<h1>тест вывода практики</h1>
+	<p>Выведены сгенерированные данные по практике.</p>
+	<table border="1" cellpadding="5">
+		<thead>
+			<tr>
+				<th>первое</th>
+				<th>второе</th>
+				<th>третье</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td th:text="${mathcontainer.getOne(0)}"></td>
+				<td th:text="${mathcontainer.getTwo(0)}"></td>
+				<td th:text="${mathcontainer.getResult(0)}"></td>
+			</tr>
+			<tr>
+				<td th:text="${mathcontainer.getOne(1)}"></td>
+				<td th:text="${mathcontainer.getTwo(1)}"></td>
+				<td th:text="${mathcontainer.getResult(1)}"></td>
+			</tr>
+			<tr>
+				<td th:text="${mathcontainer.getOne(2)}"></td>
+				<td th:text="${mathcontainer.getTwo(2)}"></td>
+				<td th:text="${mathcontainer.getResult(2)}"></td>
+			</tr>
+			<tr>
+				<td th:text="${mathcontainer.getOne(3)}"></td>
+				<td th:text="${mathcontainer.getTwo(3)}"></td>
+				<td th:text="${mathcontainer.getResult(3)}"></td>
+			</tr>
+			<tr>
+				<td th:text="${mathcontainer.getOne(4)}"></td>
+				<td th:text="${mathcontainer.getTwo(4)}"></td>
+				<td th:text="${mathcontainer.getResult(4)}"></td>
+			</tr>
+			<tr>
+				<td th:text="${mathcontainer.getOne(5)}"></td>
+				<td th:text="${mathcontainer.getTwo(5)}"></td>
+				<td th:text="${mathcontainer.getResult(5)}"></td>
+			</tr>
+			<tr>
+				<td th:text="${mathcontainer.getOne(6)}"></td>
+				<td th:text="${mathcontainer.getTwo(6)}"></td>
+				<td th:text="${mathcontainer.getResult(6)}"></td>
+			</tr>
+			<tr>
+				<td th:text="${mathcontainer.getOne(7)}"></td>
+				<td th:text="${mathcontainer.getTwo(7)}"></td>
+				<td th:text="${mathcontainer.getResult(7)}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<p>В столбце третье выведены результаты, а должен быть ответ юзера.</p>
+</body>
+</html>
