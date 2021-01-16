@@ -39,7 +39,7 @@ public class User implements Serializable{
 		this.username=username;
 		this.password=password;
 	}
-	//TODO используемый код?
+
 	public User(int id,String username,String password,boolean active, String userrole) {
 		this.id=id;
 		this.username=username;

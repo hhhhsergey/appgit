@@ -77,7 +77,6 @@ public class LessonDAOimpl implements LessonDAO<Lesson> {
 	//use для создания урока (тотал лессон)
 	//работает, при отсутствии lesson в базе возвращает пустой lesson
 	public Lesson getLastLessonById_user(int id_user) {
-		//		int lessonsNumber=entityManager.createQuery("SELECT COUNT(*) FROM math_table WHERE e.id_user=:id_user",Integer.class).setParameter("id_user", id_user).getSingleResult();
 		long b=entityManager.createQuery("SELECT COUNT(*) FROM Lesson e WHERE e.id_user=:id_user order by id_math desc",Long.class)
 				.setParameter("id_user", id_user).setMaxResults(1).getSingleResult();
 		int a=(int)b;//query return type [class java.lang.Long]
@@ -93,7 +92,7 @@ public class LessonDAOimpl implements LessonDAO<Lesson> {
 	public List<Lesson> getLastFiveLessonsById_user(int id_user) {
 		List<Lesson>lastlessons;
 		long b=entityManager.createQuery("SELECT COUNT(*) FROM Lesson e WHERE e.id_user=:id_user order by id_math desc",Long.class)
-				.setParameter("id_user", id_user).setMaxResults(1).getSingleResult();//TODO сингл результ и макс результ(1) не тафталогия?
+				.setParameter("id_user", id_user).setMaxResults(1).getSingleResult();
 		int a=(int)b;//query return type [class java.lang.Long]
 		if (a>5) {
 			a=5;

@@ -50,11 +50,11 @@ public class Services {
 	
 	//use
 	//перенести в объект с сессии результаты объекта с формы
-	public void combinemathcontainers(Mathcontainer mathcontainermain,Mathcontainer mathcontainernew) {
-		mathcontainernew.setUserresult1(mathcontainermain.getUserresult1());
-		mathcontainernew.setUserresult2(mathcontainermain.getUserresult2());
-		mathcontainernew.setUserresult3(mathcontainermain.getUserresult3());
-		mathcontainernew.setUserresult4(mathcontainermain.getUserresult4());
+	public void combinemathcontainers(Mathcontainer mathcontainerbefore,Mathcontainer mathcontainernew) {
+		mathcontainerbefore.setUserresult1(mathcontainernew.getUserresult1());
+		mathcontainerbefore.setUserresult2(mathcontainernew.getUserresult2());
+		mathcontainerbefore.setUserresult3(mathcontainernew.getUserresult3());
+		mathcontainerbefore.setUserresult4(mathcontainernew.getUserresult4());
 	}
 	
 	//use

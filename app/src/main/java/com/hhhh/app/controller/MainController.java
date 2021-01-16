@@ -59,15 +59,13 @@ public class MainController {
 	public ModelAndView test(@ModelAttribute("mathcontainer") Mathcontainer mathcontainernew, HttpSession session) {
 		Mathcontainer mathcontainerbefore=(Mathcontainer)session.getAttribute("mathcontainer");
 		services.combinemathcontainers(mathcontainerbefore, mathcontainernew);
-		services.createlesson(mathcontainernew);
+		services.createlesson(mathcontainerbefore);//расчет и сохранение
 		String username=(String)session.getAttribute("username");
 		List<Lesson>fivelessons=services.getLastFiveLessons(username);
 		ModelAndView modelAndView =new ModelAndView("menu");
 		modelAndView.addObject("fivelessons",fivelessons);
+		modelAndView.addObject("name",username);
 		return modelAndView;
 	}
 	
-	//TODO сделать страницу с показыванием результатов
-	//TODO таймаут сессии или пользователя
-
 }

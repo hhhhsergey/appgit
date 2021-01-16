@@ -150,12 +150,6 @@ public class Mathcontainer {
 		this.userresult4 = userresult4;
 	}
 
-	/*
-	 * если прокатит, то надо добавить temprank счет будет динамический цикл фор,
-	 * потом по номеру переменной сделать выражение и складывание результата в
-	 * темпранк
-	 */
-
 	public String toString() {
 		return "mathcontainer  toString:" + "\n one1 " + one1 + " two1 " + two1 + " result1 " + result1 + " userresult1 "
 				+ userresult1 + "\n one2 " + one2 + " two2 " + two2 + " result2 " + result2 + " userresult2 " + userresult2
